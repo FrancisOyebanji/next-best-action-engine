@@ -1,0 +1,501 @@
+member_id,action,expected_value,reason,runner_up
+M000000,,0.0,no eligible action above value/uplift threshold,
+M000001,,0.0,no eligible action above value/uplift threshold,
+M000002,,0.0,no eligible action above value/uplift threshold,
+M000003,,0.0,no eligible action above value/uplift threshold,
+M000004,telehealth_nudge,0.3256,highest expected value (uplift 0.163 x value),wellness_program
+M000005,,0.0,no eligible action above value/uplift threshold,
+M000006,wellness_program,0.4029,highest expected value (uplift 0.134 x value),telehealth_nudge
+M000007,wellness_program,0.3151,highest expected value (uplift 0.105 x value),telehealth_nudge
+M000008,,0.0,no eligible action above value/uplift threshold,
+M000009,care_gap_outreach,0.8802,highest expected value (uplift 0.176 x value),
+M000010,care_gap_outreach,0.9399,highest expected value (uplift 0.188 x value),wellness_program
+M000011,care_gap_outreach,0.7272,highest expected value (uplift 0.145 x value),
+M000012,,0.0,no eligible action above value/uplift threshold,
+M000013,,0.0,no eligible action above value/uplift threshold,
+M000014,care_gap_outreach,0.79,highest expected value (uplift 0.158 x value),
+M000015,care_gap_outreach,2.238,highest expected value (uplift 0.448 x value),wellness_program
+M000016,,0.0,no eligible action above value/uplift threshold,
+M000017,,0.0,no eligible action above value/uplift threshold,
+M000018,telehealth_nudge,0.1571,highest expected value (uplift 0.079 x value),
+M000019,,0.0,no eligible action above value/uplift threshold,
+M000020,,0.0,no eligible action above value/uplift threshold,
+M000021,wellness_program,1.0229,highest expected value (uplift 0.341 x value),
+M000022,,0.0,no eligible action above value/uplift threshold,
+M000023,telehealth_nudge,0.2169,highest expected value (uplift 0.108 x value),
+M000024,,0.0,no eligible action above value/uplift threshold,
+M000025,,0.0,no eligible action above value/uplift threshold,
+M000026,care_gap_outreach,1.4632,highest expected value (uplift 0.293 x value),
+M000027,,0.0,no eligible action above value/uplift threshold,
+M000028,telehealth_nudge,0.2145,highest expected value (uplift 0.107 x value),care_gap_outreach
+M000029,,0.0,no eligible action above value/uplift threshold,
+M000030,,0.0,no eligible action above value/uplift threshold,
+M000031,,0.0,no eligible action above value/uplift threshold,
+M000032,,0.0,no eligible action above value/uplift threshold,
+M000033,wellness_program,0.3818,highest expected value (uplift 0.127 x value),telehealth_nudge
+M000034,,0.0,no eligible action above value/uplift threshold,
+M000035,care_gap_outreach,0.7676,highest expected value (uplift 0.154 x value),wellness_program
+M000036,,0.0,no eligible action above value/uplift threshold,
+M000037,,0.0,no eligible action above value/uplift threshold,
+M000038,,0.0,no eligible action above value/uplift threshold,
+M000039,telehealth_nudge,0.2123,highest expected value (uplift 0.106 x value),
+M000040,,0.0,no eligible action above value/uplift threshold,
+M000041,care_gap_outreach,1.1338,highest expected value (uplift 0.227 x value),wellness_program
+M000042,telehealth_nudge,0.2929,highest expected value (uplift 0.146 x value),
+M000043,telehealth_nudge,0.2133,highest expected value (uplift 0.107 x value),wellness_program
+M000044,,0.0,no eligible action above value/uplift threshold,
+M000045,wellness_program,0.3541,highest expected value (uplift 0.118 x value),care_gap_outreach
+M000046,,0.0,no eligible action above value/uplift threshold,
+M000047,wellness_program,0.3307,highest expected value (uplift 0.110 x value),
+M000048,,0.0,no eligible action above value/uplift threshold,
+M000049,wellness_program,0.3533,highest expected value (uplift 0.118 x value),care_gap_outreach
+M000050,,0.0,no eligible action above value/uplift threshold,
+M000051,,0.0,no eligible action above value/uplift threshold,
+M000052,care_gap_outreach,1.1244,highest expected value (uplift 0.225 x value),
+M000053,,0.0,no eligible action above value/uplift threshold,
+M000054,,0.0,no eligible action above value/uplift threshold,
+M000055,telehealth_nudge,0.1692,highest expected value (uplift 0.085 x value),wellness_program
+M000056,care_gap_outreach,1.1559,highest expected value (uplift 0.231 x value),wellness_program
+M000057,care_gap_outreach,0.7729,highest expected value (uplift 0.155 x value),wellness_program
+M000058,,0.0,no eligible action above value/uplift threshold,
+M000059,,0.0,no eligible action above value/uplift threshold,
+M000060,telehealth_nudge,0.2418,highest expected value (uplift 0.121 x value),care_gap_outreach
+M000061,,0.0,no eligible action above value/uplift threshold,
+M000062,telehealth_nudge,0.2623,highest expected value (uplift 0.131 x value),wellness_program
+M000063,,0.0,no eligible action above value/uplift threshold,
+M000064,,0.0,no eligible action above value/uplift threshold,
+M000065,,0.0,no eligible action above value/uplift threshold,
+M000066,wellness_program,0.4258,highest expected value (uplift 0.142 x value),telehealth_nudge
+M000067,,0.0,no eligible action above value/uplift threshold,
+M000068,,0.0,no eligible action above value/uplift threshold,
+M000069,telehealth_nudge,0.2143,highest expected value (uplift 0.107 x value),
+M000070,wellness_program,0.3079,highest expected value (uplift 0.103 x value),
+M000071,,0.0,no eligible action above value/uplift threshold,
+M000072,care_gap_outreach,0.8228,highest expected value (uplift 0.165 x value),
+M000073,,0.0,no eligible action above value/uplift threshold,
+M000074,care_gap_outreach,1.3939,highest expected value (uplift 0.279 x value),
+M000075,telehealth_nudge,0.2478,highest expected value (uplift 0.124 x value),wellness_program
+M000076,wellness_program,0.3249,highest expected value (uplift 0.108 x value),
+M000077,telehealth_nudge,0.5424,highest expected value (uplift 0.271 x value),wellness_program
+M000078,,0.0,no eligible action above value/uplift threshold,
+M000079,care_gap_outreach,1.1413,highest expected value (uplift 0.228 x value),wellness_program
+M000080,telehealth_nudge,0.18,highest expected value (uplift 0.090 x value),wellness_program
+M000081,care_gap_outreach,1.2079,highest expected value (uplift 0.242 x value),wellness_program
+M000082,,0.0,no eligible action above value/uplift threshold,
+M000083,,0.0,no eligible action above value/uplift threshold,
+M000084,,0.0,no eligible action above value/uplift threshold,
+M000085,care_gap_outreach,0.9524,highest expected value (uplift 0.190 x value),telehealth_nudge
+M000086,,0.0,no eligible action above value/uplift threshold,
+M000087,care_gap_outreach,0.7584,highest expected value (uplift 0.152 x value),
+M000088,telehealth_nudge,0.1977,highest expected value (uplift 0.099 x value),wellness_program
+M000089,wellness_program,0.4213,highest expected value (uplift 0.140 x value),telehealth_nudge
+M000090,,0.0,no eligible action above value/uplift threshold,
+M000091,,0.0,no eligible action above value/uplift threshold,
+M000092,wellness_program,0.4324,highest expected value (uplift 0.144 x value),
+M000093,telehealth_nudge,0.1645,highest expected value (uplift 0.082 x value),care_gap_outreach
+M000094,,0.0,no eligible action above value/uplift threshold,
+M000095,care_gap_outreach,0.8323,highest expected value (uplift 0.166 x value),wellness_program
+M000096,,0.0,no eligible action above value/uplift threshold,
+M000097,telehealth_nudge,0.2073,highest expected value (uplift 0.104 x value),
+M000098,,0.0,no eligible action above value/uplift threshold,
+M000099,,0.0,no eligible action above value/uplift threshold,
+M000100,,0.0,no eligible action above value/uplift threshold,
+M000101,,0.0,no eligible action above value/uplift threshold,
+M000102,wellness_program,0.3551,highest expected value (uplift 0.118 x value),telehealth_nudge
+M000103,,0.0,no eligible action above value/uplift threshold,
+M000104,care_gap_outreach,1.5304,highest expected value (uplift 0.306 x value),
+M000105,,0.0,no eligible action above value/uplift threshold,
+M000106,,0.0,no eligible action above value/uplift threshold,
+M000107,care_gap_outreach,1.41,highest expected value (uplift 0.282 x value),wellness_program
+M000108,wellness_program,0.41,highest expected value (uplift 0.137 x value),
+M000109,,0.0,no eligible action above value/uplift threshold,
+M000110,telehealth_nudge,0.1641,highest expected value (uplift 0.082 x value),
+M000111,wellness_program,0.4941,highest expected value (uplift 0.165 x value),
+M000112,telehealth_nudge,0.2109,highest expected value (uplift 0.105 x value),
+M000113,,0.0,no eligible action above value/uplift threshold,
+M000114,care_gap_outreach,1.0231,highest expected value (uplift 0.205 x value),wellness_program
+M000115,care_gap_outreach,1.203,highest expected value (uplift 0.241 x value),wellness_program
+M000116,wellness_program,0.5153,highest expected value (uplift 0.172 x value),
+M000117,,0.0,no eligible action above value/uplift threshold,
+M000118,telehealth_nudge,0.2645,highest expected value (uplift 0.132 x value),wellness_program
+M000119,care_gap_outreach,1.1979,highest expected value (uplift 0.240 x value),wellness_program
+M000120,,0.0,no eligible action above value/uplift threshold,
+M000121,telehealth_nudge,0.2452,highest expected value (uplift 0.123 x value),
+M000122,care_gap_outreach,0.9266,highest expected value (uplift 0.185 x value),
+M000123,,0.0,no eligible action above value/uplift threshold,
+M000124,,0.0,no eligible action above value/uplift threshold,
+M000125,telehealth_nudge,0.3154,highest expected value (uplift 0.158 x value),wellness_program
+M000126,wellness_program,0.375,highest expected value (uplift 0.125 x value),
+M000127,telehealth_nudge,0.3596,highest expected value (uplift 0.180 x value),wellness_program
+M000128,,0.0,no eligible action above value/uplift threshold,
+M000129,wellness_program,0.355,highest expected value (uplift 0.118 x value),telehealth_nudge
+M000130,,0.0,no eligible action above value/uplift threshold,
+M000131,,0.0,no eligible action above value/uplift threshold,
+M000132,telehealth_nudge,0.3565,highest expected value (uplift 0.178 x value),wellness_program
+M000133,telehealth_nudge,0.1599,highest expected value (uplift 0.080 x value),wellness_program
+M000134,,0.0,no eligible action above value/uplift threshold,
+M000135,,0.0,no eligible action above value/uplift threshold,
+M000136,,0.0,no eligible action above value/uplift threshold,
+M000137,wellness_program,0.405,highest expected value (uplift 0.135 x value),
+M000138,wellness_program,0.4941,highest expected value (uplift 0.165 x value),care_gap_outreach
+M000139,care_gap_outreach,0.7803,highest expected value (uplift 0.156 x value),wellness_program
+M000140,telehealth_nudge,0.2138,highest expected value (uplift 0.107 x value),wellness_program
+M000141,,0.0,no eligible action above value/uplift threshold,
+M000142,,0.0,no eligible action above value/uplift threshold,
+M000143,,0.0,no eligible action above value/uplift threshold,
+M000144,,0.0,no eligible action above value/uplift threshold,
+M000145,telehealth_nudge,0.1569,highest expected value (uplift 0.078 x value),wellness_program
+M000146,telehealth_nudge,0.175,highest expected value (uplift 0.088 x value),
+M000147,,0.0,no eligible action above value/uplift threshold,
+M000148,,0.0,no eligible action above value/uplift threshold,
+M000149,telehealth_nudge,0.1436,highest expected value (uplift 0.072 x value),
+M000150,,0.0,no eligible action above value/uplift threshold,
+M000151,care_gap_outreach,0.8547,highest expected value (uplift 0.171 x value),
+M000152,care_gap_outreach,0.7994,highest expected value (uplift 0.160 x value),telehealth_nudge
+M000153,,0.0,no eligible action above value/uplift threshold,
+M000154,care_gap_outreach,0.852,highest expected value (uplift 0.170 x value),telehealth_nudge
+M000155,,0.0,no eligible action above value/uplift threshold,
+M000156,,0.0,no eligible action above value/uplift threshold,
+M000157,,0.0,no eligible action above value/uplift threshold,
+M000158,,0.0,no eligible action above value/uplift threshold,
+M000159,care_gap_outreach,0.9733,highest expected value (uplift 0.195 x value),wellness_program
+M000160,,0.0,no eligible action above value/uplift threshold,
+M000161,care_gap_outreach,0.7995,highest expected value (uplift 0.160 x value),wellness_program
+M000162,,0.0,no eligible action above value/uplift threshold,
+M000163,telehealth_nudge,0.4046,highest expected value (uplift 0.202 x value),
+M000164,care_gap_outreach,0.7263,highest expected value (uplift 0.145 x value),wellness_program
+M000165,wellness_program,0.4975,highest expected value (uplift 0.166 x value),care_gap_outreach
+M000166,care_gap_outreach,1.0597,highest expected value (uplift 0.212 x value),
+M000167,,0.0,no eligible action above value/uplift threshold,
+M000168,,0.0,no eligible action above value/uplift threshold,
+M000169,wellness_program,0.3296,highest expected value (uplift 0.110 x value),
+M000170,,0.0,no eligible action above value/uplift threshold,
+M000171,wellness_program,0.3455,highest expected value (uplift 0.115 x value),telehealth_nudge
+M000172,,0.0,no eligible action above value/uplift threshold,
+M000173,wellness_program,0.3616,highest expected value (uplift 0.121 x value),
+M000174,wellness_program,0.321,highest expected value (uplift 0.107 x value),telehealth_nudge
+M000175,telehealth_nudge,0.3569,highest expected value (uplift 0.178 x value),
+M000176,,0.0,no eligible action above value/uplift threshold,
+M000177,care_gap_outreach,0.8372,highest expected value (uplift 0.167 x value),telehealth_nudge
+M000178,wellness_program,0.7383,highest expected value (uplift 0.246 x value),care_gap_outreach
+M000179,care_gap_outreach,1.007,highest expected value (uplift 0.201 x value),wellness_program
+M000180,,0.0,no eligible action above value/uplift threshold,
+M000181,,0.0,no eligible action above value/uplift threshold,
+M000182,,0.0,no eligible action above value/uplift threshold,
+M000183,care_gap_outreach,1.0598,highest expected value (uplift 0.212 x value),wellness_program
+M000184,wellness_program,0.3937,highest expected value (uplift 0.131 x value),telehealth_nudge
+M000185,,0.0,no eligible action above value/uplift threshold,
+M000186,wellness_program,0.5796,highest expected value (uplift 0.193 x value),telehealth_nudge
+M000187,,0.0,no eligible action above value/uplift threshold,
+M000188,telehealth_nudge,0.2588,highest expected value (uplift 0.129 x value),wellness_program
+M000189,,0.0,no eligible action above value/uplift threshold,
+M000190,care_gap_outreach,0.9221,highest expected value (uplift 0.184 x value),wellness_program
+M000191,,0.0,no eligible action above value/uplift threshold,
+M000192,,0.0,no eligible action above value/uplift threshold,
+M000193,,0.0,no eligible action above value/uplift threshold,
+M000194,telehealth_nudge,0.2137,highest expected value (uplift 0.107 x value),wellness_program
+M000195,,0.0,no eligible action above value/uplift threshold,
+M000196,telehealth_nudge,0.3716,highest expected value (uplift 0.186 x value),
+M000197,,0.0,no eligible action above value/uplift threshold,
+M000198,wellness_program,0.8488,highest expected value (uplift 0.283 x value),care_gap_outreach
+M000199,care_gap_outreach,0.7613,highest expected value (uplift 0.152 x value),
+M000200,wellness_program,0.308,highest expected value (uplift 0.103 x value),
+M000201,,0.0,no eligible action above value/uplift threshold,
+M000202,care_gap_outreach,1.2265,highest expected value (uplift 0.245 x value),wellness_program
+M000203,telehealth_nudge,0.1823,highest expected value (uplift 0.091 x value),
+M000204,,0.0,no eligible action above value/uplift threshold,
+M000205,,0.0,no eligible action above value/uplift threshold,
+M000206,care_gap_outreach,1.3066,highest expected value (uplift 0.261 x value),
+M000207,telehealth_nudge,0.3307,highest expected value (uplift 0.165 x value),wellness_program
+M000208,,0.0,no eligible action above value/uplift threshold,
+M000209,care_gap_outreach,1.3335,highest expected value (uplift 0.267 x value),wellness_program
+M000210,telehealth_nudge,0.1583,highest expected value (uplift 0.079 x value),
+M000211,care_gap_outreach,1.0706,highest expected value (uplift 0.214 x value),telehealth_nudge
+M000212,wellness_program,0.5132,highest expected value (uplift 0.171 x value),telehealth_nudge
+M000213,telehealth_nudge,0.4719,highest expected value (uplift 0.236 x value),wellness_program
+M000214,telehealth_nudge,0.2047,highest expected value (uplift 0.102 x value),wellness_program
+M000215,,0.0,no eligible action above value/uplift threshold,
+M000216,,0.0,no eligible action above value/uplift threshold,
+M000217,,0.0,no eligible action above value/uplift threshold,
+M000218,care_gap_outreach,1.1559,highest expected value (uplift 0.231 x value),wellness_program
+M000219,care_gap_outreach,1.2158,highest expected value (uplift 0.243 x value),wellness_program
+M000220,,0.0,no eligible action above value/uplift threshold,
+M000221,telehealth_nudge,0.1595,highest expected value (uplift 0.080 x value),
+M000222,,0.0,no eligible action above value/uplift threshold,
+M000223,wellness_program,0.4124,highest expected value (uplift 0.137 x value),care_gap_outreach
+M000224,telehealth_nudge,0.2609,highest expected value (uplift 0.130 x value),wellness_program
+M000225,,0.0,no eligible action above value/uplift threshold,
+M000226,wellness_program,0.4195,highest expected value (uplift 0.140 x value),telehealth_nudge
+M000227,telehealth_nudge,0.2302,highest expected value (uplift 0.115 x value),wellness_program
+M000228,care_gap_outreach,1.1125,highest expected value (uplift 0.223 x value),
+M000229,,0.0,no eligible action above value/uplift threshold,
+M000230,,0.0,no eligible action above value/uplift threshold,
+M000231,care_gap_outreach,0.7851,highest expected value (uplift 0.157 x value),wellness_program
+M000232,,0.0,no eligible action above value/uplift threshold,
+M000233,,0.0,no eligible action above value/uplift threshold,
+M000234,telehealth_nudge,0.2572,highest expected value (uplift 0.129 x value),wellness_program
+M000235,,0.0,no eligible action above value/uplift threshold,
+M000236,,0.0,no eligible action above value/uplift threshold,
+M000237,wellness_program,0.4013,highest expected value (uplift 0.134 x value),
+M000238,,0.0,no eligible action above value/uplift threshold,
+M000239,wellness_program,0.3212,highest expected value (uplift 0.107 x value),telehealth_nudge
+M000240,,0.0,no eligible action above value/uplift threshold,
+M000241,,0.0,no eligible action above value/uplift threshold,
+M000242,wellness_program,0.5173,highest expected value (uplift 0.172 x value),
+M000243,care_gap_outreach,0.829,highest expected value (uplift 0.166 x value),
+M000244,,0.0,no eligible action above value/uplift threshold,
+M000245,wellness_program,0.4603,highest expected value (uplift 0.153 x value),
+M000246,care_gap_outreach,0.7476,highest expected value (uplift 0.150 x value),telehealth_nudge
+M000247,care_gap_outreach,0.8251,highest expected value (uplift 0.165 x value),
+M000248,,0.0,no eligible action above value/uplift threshold,
+M000249,,0.0,no eligible action above value/uplift threshold,
+M000250,care_gap_outreach,1.4472,highest expected value (uplift 0.289 x value),telehealth_nudge
+M000251,care_gap_outreach,1.3013,highest expected value (uplift 0.260 x value),
+M000252,,0.0,no eligible action above value/uplift threshold,
+M000253,telehealth_nudge,0.4741,highest expected value (uplift 0.237 x value),wellness_program
+M000254,wellness_program,0.355,highest expected value (uplift 0.118 x value),
+M000255,care_gap_outreach,1.0009,highest expected value (uplift 0.200 x value),wellness_program
+M000256,,0.0,no eligible action above value/uplift threshold,
+M000257,telehealth_nudge,0.2324,highest expected value (uplift 0.116 x value),
+M000258,telehealth_nudge,0.1527,highest expected value (uplift 0.076 x value),wellness_program
+M000259,,0.0,no eligible action above value/uplift threshold,
+M000260,,0.0,no eligible action above value/uplift threshold,
+M000261,,0.0,no eligible action above value/uplift threshold,
+M000262,wellness_program,0.3033,highest expected value (uplift 0.101 x value),
+M000263,,0.0,no eligible action above value/uplift threshold,
+M000264,telehealth_nudge,0.228,highest expected value (uplift 0.114 x value),
+M000265,care_gap_outreach,0.7441,highest expected value (uplift 0.149 x value),
+M000266,,0.0,no eligible action above value/uplift threshold,
+M000267,,0.0,no eligible action above value/uplift threshold,
+M000268,,0.0,no eligible action above value/uplift threshold,
+M000269,,0.0,no eligible action above value/uplift threshold,
+M000270,wellness_program,0.3344,highest expected value (uplift 0.111 x value),telehealth_nudge
+M000271,,0.0,no eligible action above value/uplift threshold,
+M000272,care_gap_outreach,0.7522,highest expected value (uplift 0.150 x value),wellness_program
+M000273,wellness_program,0.3935,highest expected value (uplift 0.131 x value),
+M000274,,0.0,no eligible action above value/uplift threshold,
+M000275,care_gap_outreach,0.9637,highest expected value (uplift 0.193 x value),wellness_program
+M000276,telehealth_nudge,0.2275,highest expected value (uplift 0.114 x value),
+M000277,,0.0,no eligible action above value/uplift threshold,
+M000278,,0.0,no eligible action above value/uplift threshold,
+M000279,telehealth_nudge,0.2194,highest expected value (uplift 0.110 x value),
+M000280,,0.0,no eligible action above value/uplift threshold,
+M000281,,0.0,no eligible action above value/uplift threshold,
+M000282,care_gap_outreach,0.7274,highest expected value (uplift 0.145 x value),telehealth_nudge
+M000283,,0.0,no eligible action above value/uplift threshold,
+M000284,wellness_program,0.6223,highest expected value (uplift 0.207 x value),care_gap_outreach
+M000285,care_gap_outreach,1.0008,highest expected value (uplift 0.200 x value),wellness_program
+M000286,,0.0,no eligible action above value/uplift threshold,
+M000287,telehealth_nudge,0.2044,highest expected value (uplift 0.102 x value),
+M000288,telehealth_nudge,0.164,highest expected value (uplift 0.082 x value),wellness_program
+M000289,,0.0,no eligible action above value/uplift threshold,
+M000290,,0.0,no eligible action above value/uplift threshold,
+M000291,,0.0,no eligible action above value/uplift threshold,
+M000292,,0.0,no eligible action above value/uplift threshold,
+M000293,,0.0,no eligible action above value/uplift threshold,
+M000294,care_gap_outreach,0.9655,highest expected value (uplift 0.193 x value),wellness_program
+M000295,care_gap_outreach,1.1333,highest expected value (uplift 0.227 x value),wellness_program
+M000296,,0.0,no eligible action above value/uplift threshold,
+M000297,,0.0,no eligible action above value/uplift threshold,
+M000298,wellness_program,0.3101,highest expected value (uplift 0.103 x value),
+M000299,,0.0,no eligible action above value/uplift threshold,
+M000300,,0.0,no eligible action above value/uplift threshold,
+M000301,,0.0,no eligible action above value/uplift threshold,
+M000302,,0.0,no eligible action above value/uplift threshold,
+M000303,,0.0,no eligible action above value/uplift threshold,
+M000304,care_gap_outreach,1.81,highest expected value (uplift 0.362 x value),wellness_program
+M000305,,0.0,no eligible action above value/uplift threshold,
+M000306,,0.0,no eligible action above value/uplift threshold,
+M000307,telehealth_nudge,0.1456,highest expected value (uplift 0.073 x value),wellness_program
+M000308,wellness_program,0.3958,highest expected value (uplift 0.132 x value),
+M000309,,0.0,no eligible action above value/uplift threshold,
+M000310,,0.0,no eligible action above value/uplift threshold,
+M000311,wellness_program,0.3663,highest expected value (uplift 0.122 x value),
+M000312,,0.0,no eligible action above value/uplift threshold,
+M000313,,0.0,no eligible action above value/uplift threshold,
+M000314,,0.0,no eligible action above value/uplift threshold,
+M000315,care_gap_outreach,0.8658,highest expected value (uplift 0.173 x value),
+M000316,wellness_program,0.4152,highest expected value (uplift 0.138 x value),telehealth_nudge
+M000317,,0.0,no eligible action above value/uplift threshold,
+M000318,,0.0,no eligible action above value/uplift threshold,
+M000319,,0.0,no eligible action above value/uplift threshold,
+M000320,wellness_program,0.5219,highest expected value (uplift 0.174 x value),care_gap_outreach
+M000321,,0.0,no eligible action above value/uplift threshold,
+M000322,wellness_program,0.3994,highest expected value (uplift 0.133 x value),
+M000323,wellness_program,0.3375,highest expected value (uplift 0.113 x value),
+M000324,,0.0,no eligible action above value/uplift threshold,
+M000325,,0.0,no eligible action above value/uplift threshold,
+M000326,wellness_program,0.3151,highest expected value (uplift 0.105 x value),telehealth_nudge
+M000327,,0.0,no eligible action above value/uplift threshold,
+M000328,,0.0,no eligible action above value/uplift threshold,
+M000329,,0.0,no eligible action above value/uplift threshold,
+M000330,wellness_program,0.3354,highest expected value (uplift 0.112 x value),
+M000331,telehealth_nudge,0.1795,highest expected value (uplift 0.090 x value),wellness_program
+M000332,wellness_program,0.3251,highest expected value (uplift 0.108 x value),telehealth_nudge
+M000333,telehealth_nudge,0.1497,highest expected value (uplift 0.075 x value),
+M000334,telehealth_nudge,0.172,highest expected value (uplift 0.086 x value),
+M000335,,0.0,no eligible action above value/uplift threshold,
+M000336,,0.0,no eligible action above value/uplift threshold,
+M000337,,0.0,no eligible action above value/uplift threshold,
+M000338,,0.0,no eligible action above value/uplift threshold,
+M000339,,0.0,no eligible action above value/uplift threshold,
+M000340,care_gap_outreach,2.3293,highest expected value (uplift 0.466 x value),wellness_program
+M000341,,0.0,no eligible action above value/uplift threshold,
+M000342,care_gap_outreach,0.8725,highest expected value (uplift 0.175 x value),wellness_program
+M000343,care_gap_outreach,0.9784,highest expected value (uplift 0.196 x value),telehealth_nudge
+M000344,care_gap_outreach,1.507,highest expected value (uplift 0.301 x value),wellness_program
+M000345,,0.0,no eligible action above value/uplift threshold,
+M000346,,0.0,no eligible action above value/uplift threshold,
+M000347,,0.0,no eligible action above value/uplift threshold,
+M000348,,0.0,no eligible action above value/uplift threshold,
+M000349,care_gap_outreach,1.4474,highest expected value (uplift 0.289 x value),
+M000350,,0.0,no eligible action above value/uplift threshold,
+M000351,,0.0,no eligible action above value/uplift threshold,
+M000352,,0.0,no eligible action above value/uplift threshold,
+M000353,,0.0,no eligible action above value/uplift threshold,
+M000354,,0.0,no eligible action above value/uplift threshold,
+M000355,,0.0,no eligible action above value/uplift threshold,
+M000356,care_gap_outreach,1.2286,highest expected value (uplift 0.246 x value),
+M000357,,0.0,no eligible action above value/uplift threshold,
+M000358,telehealth_nudge,0.229,highest expected value (uplift 0.115 x value),wellness_program
+M000359,wellness_program,0.4055,highest expected value (uplift 0.135 x value),telehealth_nudge
+M000360,wellness_program,0.3027,highest expected value (uplift 0.101 x value),telehealth_nudge
+M000361,,0.0,no eligible action above value/uplift threshold,
+M000362,,0.0,no eligible action above value/uplift threshold,
+M000363,,0.0,no eligible action above value/uplift threshold,
+M000364,wellness_program,0.447,highest expected value (uplift 0.149 x value),telehealth_nudge
+M000365,,0.0,no eligible action above value/uplift threshold,
+M000366,care_gap_outreach,1.45,highest expected value (uplift 0.290 x value),wellness_program
+M000367,wellness_program,0.4341,highest expected value (uplift 0.145 x value),
+M000368,wellness_program,0.4946,highest expected value (uplift 0.165 x value),telehealth_nudge
+M000369,,0.0,no eligible action above value/uplift threshold,
+M000370,,0.0,no eligible action above value/uplift threshold,
+M000371,care_gap_outreach,0.9921,highest expected value (uplift 0.198 x value),telehealth_nudge
+M000372,telehealth_nudge,0.1718,highest expected value (uplift 0.086 x value),
+M000373,care_gap_outreach,1.1551,highest expected value (uplift 0.231 x value),
+M000374,,0.0,no eligible action above value/uplift threshold,
+M000375,wellness_program,0.4626,highest expected value (uplift 0.154 x value),telehealth_nudge
+M000376,,0.0,no eligible action above value/uplift threshold,
+M000377,care_gap_outreach,1.0351,highest expected value (uplift 0.207 x value),wellness_program
+M000378,telehealth_nudge,0.3838,highest expected value (uplift 0.192 x value),wellness_program
+M000379,,0.0,no eligible action above value/uplift threshold,
+M000380,,0.0,no eligible action above value/uplift threshold,
+M000381,,0.0,no eligible action above value/uplift threshold,
+M000382,,0.0,no eligible action above value/uplift threshold,
+M000383,,0.0,no eligible action above value/uplift threshold,
+M000384,,0.0,no eligible action above value/uplift threshold,
+M000385,wellness_program,0.3875,highest expected value (uplift 0.129 x value),care_gap_outreach
+M000386,,0.0,no eligible action above value/uplift threshold,
+M000387,telehealth_nudge,0.235,highest expected value (uplift 0.117 x value),care_gap_outreach
+M000388,,0.0,no eligible action above value/uplift threshold,
+M000389,,0.0,no eligible action above value/uplift threshold,
+M000390,,0.0,no eligible action above value/uplift threshold,
+M000391,care_gap_outreach,0.9888,highest expected value (uplift 0.198 x value),wellness_program
+M000392,,0.0,no eligible action above value/uplift threshold,
+M000393,,0.0,no eligible action above value/uplift threshold,
+M000394,wellness_program,0.3642,highest expected value (uplift 0.121 x value),
+M000395,,0.0,no eligible action above value/uplift threshold,
+M000396,,0.0,no eligible action above value/uplift threshold,
+M000397,,0.0,no eligible action above value/uplift threshold,
+M000398,,0.0,no eligible action above value/uplift threshold,
+M000399,telehealth_nudge,0.3047,highest expected value (uplift 0.152 x value),
+M000400,,0.0,no eligible action above value/uplift threshold,
+M000401,,0.0,no eligible action above value/uplift threshold,
+M000402,wellness_program,0.4306,highest expected value (uplift 0.144 x value),
+M000403,,0.0,no eligible action above value/uplift threshold,
+M000404,care_gap_outreach,1.0577,highest expected value (uplift 0.212 x value),telehealth_nudge
+M000405,wellness_program,0.3672,highest expected value (uplift 0.122 x value),care_gap_outreach
+M000406,care_gap_outreach,0.7565,highest expected value (uplift 0.151 x value),
+M000407,,0.0,no eligible action above value/uplift threshold,
+M000408,,0.0,no eligible action above value/uplift threshold,
+M000409,care_gap_outreach,1.0477,highest expected value (uplift 0.210 x value),wellness_program
+M000410,care_gap_outreach,1.0682,highest expected value (uplift 0.214 x value),
+M000411,,0.0,no eligible action above value/uplift threshold,
+M000412,,0.0,no eligible action above value/uplift threshold,
+M000413,,0.0,no eligible action above value/uplift threshold,
+M000414,,0.0,no eligible action above value/uplift threshold,
+M000415,,0.0,no eligible action above value/uplift threshold,
+M000416,,0.0,no eligible action above value/uplift threshold,
+M000417,,0.0,no eligible action above value/uplift threshold,
+M000418,,0.0,no eligible action above value/uplift threshold,
+M000419,,0.0,no eligible action above value/uplift threshold,
+M000420,care_gap_outreach,1.2626,highest expected value (uplift 0.253 x value),wellness_program
+M000421,care_gap_outreach,1.3381,highest expected value (uplift 0.268 x value),wellness_program
+M000422,,0.0,no eligible action above value/uplift threshold,
+M000423,,0.0,no eligible action above value/uplift threshold,
+M000424,,0.0,no eligible action above value/uplift threshold,
+M000425,telehealth_nudge,0.1889,highest expected value (uplift 0.094 x value),
+M000426,wellness_program,0.3026,highest expected value (uplift 0.101 x value),
+M000427,care_gap_outreach,0.9829,highest expected value (uplift 0.197 x value),wellness_program
+M000428,care_gap_outreach,0.8438,highest expected value (uplift 0.169 x value),wellness_program
+M000429,care_gap_outreach,0.7297,highest expected value (uplift 0.146 x value),
+M000430,care_gap_outreach,0.7658,highest expected value (uplift 0.153 x value),telehealth_nudge
+M000431,,0.0,no eligible action above value/uplift threshold,
+M000432,,0.0,no eligible action above value/uplift threshold,
+M000433,,0.0,no eligible action above value/uplift threshold,
+M000434,,0.0,no eligible action above value/uplift threshold,
+M000435,telehealth_nudge,0.2962,highest expected value (uplift 0.148 x value),
+M000436,telehealth_nudge,0.1593,highest expected value (uplift 0.080 x value),
+M000437,,0.0,no eligible action above value/uplift threshold,
+M000438,,0.0,no eligible action above value/uplift threshold,
+M000439,,0.0,no eligible action above value/uplift threshold,
+M000440,,0.0,no eligible action above value/uplift threshold,
+M000441,care_gap_outreach,0.9508,highest expected value (uplift 0.190 x value),
+M000442,care_gap_outreach,1.0578,highest expected value (uplift 0.212 x value),wellness_program
+M000443,,0.0,no eligible action above value/uplift threshold,
+M000444,wellness_program,0.3142,highest expected value (uplift 0.105 x value),telehealth_nudge
+M000445,wellness_program,0.6871,highest expected value (uplift 0.229 x value),
+M000446,telehealth_nudge,0.315,highest expected value (uplift 0.158 x value),care_gap_outreach
+M000447,telehealth_nudge,0.2879,highest expected value (uplift 0.144 x value),
+M000448,wellness_program,0.7675,highest expected value (uplift 0.256 x value),care_gap_outreach
+M000449,care_gap_outreach,1.0467,highest expected value (uplift 0.209 x value),wellness_program
+M000450,,0.0,no eligible action above value/uplift threshold,
+M000451,,0.0,no eligible action above value/uplift threshold,
+M000452,wellness_program,0.3407,highest expected value (uplift 0.114 x value),
+M000453,wellness_program,0.5054,highest expected value (uplift 0.168 x value),
+M000454,wellness_program,0.3887,highest expected value (uplift 0.130 x value),care_gap_outreach
+M000455,care_gap_outreach,0.9383,highest expected value (uplift 0.188 x value),wellness_program
+M000456,,0.0,no eligible action above value/uplift threshold,
+M000457,,0.0,no eligible action above value/uplift threshold,
+M000458,care_gap_outreach,1.2066,highest expected value (uplift 0.241 x value),wellness_program
+M000459,,0.0,no eligible action above value/uplift threshold,
+M000460,,0.0,no eligible action above value/uplift threshold,
+M000461,wellness_program,0.4362,highest expected value (uplift 0.145 x value),
+M000462,care_gap_outreach,1.0397,highest expected value (uplift 0.208 x value),
+M000463,,0.0,no eligible action above value/uplift threshold,
+M000464,telehealth_nudge,0.1567,highest expected value (uplift 0.078 x value),wellness_program
+M000465,,0.0,no eligible action above value/uplift threshold,
+M000466,,0.0,no eligible action above value/uplift threshold,
+M000467,,0.0,no eligible action above value/uplift threshold,
+M000468,,0.0,no eligible action above value/uplift threshold,
+M000469,care_gap_outreach,1.1341,highest expected value (uplift 0.227 x value),
+M000470,care_gap_outreach,1.0255,highest expected value (uplift 0.205 x value),wellness_program
+M000471,,0.0,no eligible action above value/uplift threshold,
+M000472,,0.0,no eligible action above value/uplift threshold,
+M000473,,0.0,no eligible action above value/uplift threshold,
+M000474,care_gap_outreach,0.9608,highest expected value (uplift 0.192 x value),telehealth_nudge
+M000475,telehealth_nudge,0.168,highest expected value (uplift 0.084 x value),
+M000476,,0.0,no eligible action above value/uplift threshold,
+M000477,wellness_program,0.3706,highest expected value (uplift 0.124 x value),telehealth_nudge
+M000478,telehealth_nudge,0.3085,highest expected value (uplift 0.154 x value),
+M000479,wellness_program,0.3452,highest expected value (uplift 0.115 x value),
+M000480,care_gap_outreach,1.2688,highest expected value (uplift 0.254 x value),wellness_program
+M000481,,0.0,no eligible action above value/uplift threshold,
+M000482,,0.0,no eligible action above value/uplift threshold,
+M000483,care_gap_outreach,0.7558,highest expected value (uplift 0.151 x value),wellness_program
+M000484,,0.0,no eligible action above value/uplift threshold,
+M000485,telehealth_nudge,0.4216,highest expected value (uplift 0.211 x value),
+M000486,,0.0,no eligible action above value/uplift threshold,
+M000487,wellness_program,0.3227,highest expected value (uplift 0.108 x value),
+M000488,telehealth_nudge,0.166,highest expected value (uplift 0.083 x value),
+M000489,care_gap_outreach,0.9688,highest expected value (uplift 0.194 x value),
+M000490,,0.0,no eligible action above value/uplift threshold,
+M000491,telehealth_nudge,0.158,highest expected value (uplift 0.079 x value),wellness_program
+M000492,care_gap_outreach,1.064,highest expected value (uplift 0.213 x value),wellness_program
+M000493,,0.0,no eligible action above value/uplift threshold,
+M000494,wellness_program,0.49,highest expected value (uplift 0.163 x value),
+M000495,,0.0,no eligible action above value/uplift threshold,
+M000496,telehealth_nudge,0.4759,highest expected value (uplift 0.238 x value),wellness_program
+M000497,telehealth_nudge,0.2243,highest expected value (uplift 0.112 x value),
+M000498,wellness_program,0.4206,highest expected value (uplift 0.140 x value),telehealth_nudge
+M000499,care_gap_outreach,1.1131,highest expected value (uplift 0.223 x value),

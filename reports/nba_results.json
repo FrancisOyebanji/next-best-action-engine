@@ -1,0 +1,60 @@
+{
+  "measurement": {
+    "care_gap_outreach": {
+      "qini_uplift": 119.43,
+      "qini_propensity": 17.37,
+      "qini_random": 4.87,
+      "ab_test": {
+        "response_rate_treatment": 0.4935,
+        "response_rate_control": 0.3951,
+        "absolute_lift": 0.0983,
+        "relative_lift_pct": 24.9,
+        "p_value": 0.0,
+        "significant": true
+      },
+      "true_uplift_top20pct_uplift_targeting": 0.168,
+      "true_uplift_top20pct_propensity_targeting": 0.0917
+    },
+    "wellness_program": {
+      "qini_uplift": 26.51,
+      "qini_propensity": 11.79,
+      "qini_random": -21.79,
+      "ab_test": {
+        "response_rate_treatment": 0.4728,
+        "response_rate_control": 0.4165,
+        "absolute_lift": 0.0563,
+        "relative_lift_pct": 13.5,
+        "p_value": 5.52e-10,
+        "significant": true
+      },
+      "true_uplift_top20pct_uplift_targeting": 0.0882,
+      "true_uplift_top20pct_propensity_targeting": 0.0568
+    },
+    "telehealth_nudge": {
+      "qini_uplift": 14.15,
+      "qini_propensity": 36.04,
+      "qini_random": 8.7,
+      "ab_test": {
+        "response_rate_treatment": 0.4521,
+        "response_rate_control": 0.4353,
+        "absolute_lift": 0.0168,
+        "relative_lift_pct": 3.9,
+        "p_value": 0.0633,
+        "significant": false
+      },
+      "true_uplift_top20pct_uplift_targeting": 0.0592,
+      "true_uplift_top20pct_propensity_targeting": 0.0576
+    }
+  },
+  "nba_summary": {
+    "members": 40000,
+    "contacted": 20000,
+    "suppressed": 20000,
+    "by_action": {
+      "telehealth_nudge": 6000,
+      "wellness_program": 6000,
+      "care_gap_outreach": 8000
+    },
+    "total_expected_value": 12351.8
+  }
+}
