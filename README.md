@@ -1,6 +1,43 @@
-# Next Best Action Engine — Uplift Modeling, Decisioning & Measurement
+# Customer Behavior Intelligence — Digital Twins, Uplift Modeling & Decisioning
 
-**An end-to-end Next Best Action system for health-plan member engagement: uplift models that find the "persuadables," a decision engine that applies eligibility rules and constraints to pick each member's next best action, and a measurement framework (Qini, A/B lift) that proves uplift targeting beats propensity — plus BigQuery targeting pipelines.**
+**An AI platform that models and simulates customer behavior end to end: AI-powered Digital Twins (synthetic personas that simulate customer decisions, validated against real outcomes with a fidelity framework), uplift models that find the "persuadables," a next-best-action decision engine, and an experimentation/measurement layer (Qini, A/B lift). Python + SQL.**
+
+> **In one breath (Digital Twin / customer-simulation focus):** Built AI-powered Digital Twins — synthetic customer personas with behavioral-science traits and a latent decision process — that simulate customer preferences and decisions, then measured the alignment between simulated and real-world outcomes with a fidelity framework (accuracy, ROC-AUC, calibration, per-segment accept-rate match) and improved simulation fidelity +14 points through a calibration experiment. Paired with uplift modeling, an eligibility-constrained next-best-action engine, and a Qini/A-B measurement layer, it spans modeling, simulating, and acting on customer behavior.
+
+---
+
+## Digital Twins — customer behavior simulation (headline for the Digital Twin role)
+
+Synthetic customer personas whose simulated decisions are validated against real outcomes, and improved through experimentation:
+
+```bash
+PYTHONPATH=src python -m digital_twin.run_twin          # generate twins -> simulate -> measure fidelity -> improve -> what-if
+PYTHONPATH=src python -m digital_twin.build_dashboard   # fidelity dashboard
+PYTHONPATH=src python -m pytest tests/test_digital_twin.py -q   # 7 tests incl. per-segment alignment
+```
+
+Verified run (8,000 twins, 24,000 decisions):
+
+| Stage | Composite fidelity | Accuracy | ROC-AUC |
+|---|---|---|---|
+| Uncalibrated heuristic twin | 60.7 | 0.51 | 0.57 |
+| After calibration experiment | **75.0** | 0.67 | 0.69 |
+| **Fidelity improvement** | **+14.3** | | |
+
+Per-segment alignment (simulated vs real accept rate): Digital Native 74.5% / 72.7%, Loyalist 66.1% / 66.3%, Skeptic 48.6% / 49.1%, Value Seeker 61.5% / 63.3% — the twins reproduce each behavioral segment's real behavior within ~2pp.
+
+- **Behavioral personas** ([personas.py](src/digital_twin/personas.py)) — traits (price sensitivity, loyalty, risk aversion, channel preference, novelty) from marketing/behavioral-science archetypes, driving a known latent decision process (the "real-world outcome").
+- **Decision simulator** ([twin_simulator.py](src/digital_twin/twin_simulator.py)) — an interpretable utility twin calibrated to real outcomes, with a **swappable LLM-persona adapter** (role-play + RAG grounding) behind the same interface as the production path.
+- **Fidelity / alignment framework** ([fidelity.py](src/digital_twin/fidelity.py)) — measures simulated-vs-real alignment (accuracy, AUC, Brier/calibration, accept-rate match, per-segment fidelity, composite score) and drives improvement through experimentation.
+- **What-if simulation** — run the twin population through a proposed offer to predict aggregate response (a *synthetic A/B* before spending on a real one).
+
+This maps directly to the role: build/enhance **Digital Twins that simulate customer behavior and decision-making**, apply **behavioral science**, use **LLM/RAG/agentic + evaluation frameworks**, and **measure alignment between AI predictions and real-world outcomes**, improving fidelity through validation.
+
+---
+
+## Next Best Action — uplift modeling & decisioning (the acting layer)
+
+**An end-to-end Next Best Action system: uplift models that find the "persuadables," a decision engine that applies eligibility rules and constraints to pick each customer's next best action, and a measurement framework (Qini, A/B lift) that proves uplift targeting beats propensity — plus BigQuery targeting pipelines.**
 
 > **In one breath:** Built a Next Best Action decisioning platform spanning uplift modeling (T-learner incremental-effect models per action), an eligibility- and capacity-constrained decision engine that selects each member's single best action by expected value, and an uplift measurement framework (Qini curves, A/B incremental-lift testing) demonstrating that uplift-based targeting captures up to 7x the incremental response of propensity targeting — with BigQuery SQL pipelines for audience sizing, campaign sizing, and performance reporting.
 

@@ -1,0 +1,174 @@
+{
+  "n_twins": 8000,
+  "n_decisions": 24000,
+  "baseline_fidelity": {
+    "decision_accuracy": 0.5062,
+    "roc_auc": 0.5741,
+    "brier_score": 0.2891,
+    "real_accept_rate": 0.6376,
+    "simulated_accept_rate": 0.4043,
+    "accept_rate_alignment": 0.7666,
+    "per_segment_fidelity": {
+      "Digital Native": {
+        "accuracy": 0.5275,
+        "real_accept_rate": 0.7273,
+        "sim_accept_rate": 0.5015
+      },
+      "Loyalist": {
+        "accuracy": 0.6214,
+        "real_accept_rate": 0.6628,
+        "sim_accept_rate": 0.551
+      },
+      "Skeptic": {
+        "accuracy": 0.5086,
+        "real_accept_rate": 0.4914,
+        "sim_accept_rate": 0.1959
+      },
+      "Value Seeker": {
+        "accuracy": 0.3673,
+        "real_accept_rate": 0.6327,
+        "sim_accept_rate": 0.3023
+      }
+    },
+    "calibration_curve": [
+      {
+        "bin_mid": 0.05,
+        "predicted": 0.0758,
+        "actual": 0.4483,
+        "n": 29
+      },
+      {
+        "bin_mid": 0.15,
+        "predicted": 0.1635,
+        "actual": 0.4928,
+        "n": 694
+      },
+      {
+        "bin_mid": 0.25,
+        "predicted": 0.2524,
+        "actual": 0.5796,
+        "n": 1551
+      },
+      {
+        "bin_mid": 0.35,
+        "predicted": 0.3386,
+        "actual": 0.6271,
+        "n": 1094
+      },
+      {
+        "bin_mid": 0.45,
+        "predicted": 0.4657,
+        "actual": 0.6927,
+        "n": 1126
+      },
+      {
+        "bin_mid": 0.55,
+        "predicted": 0.5451,
+        "actual": 0.6901,
+        "n": 2291
+      },
+      {
+        "bin_mid": 0.65,
+        "predicted": 0.6263,
+        "actual": 0.6988,
+        "n": 415
+      }
+    ],
+    "composite_fidelity_score": 60.7
+  },
+  "calibrated_fidelity": {
+    "decision_accuracy": 0.6678,
+    "roc_auc": 0.6927,
+    "brier_score": 0.2068,
+    "real_accept_rate": 0.6376,
+    "simulated_accept_rate": 0.6345,
+    "accept_rate_alignment": 0.9969,
+    "per_segment_fidelity": {
+      "Digital Native": {
+        "accuracy": 0.7292,
+        "real_accept_rate": 0.7273,
+        "sim_accept_rate": 0.745
+      },
+      "Loyalist": {
+        "accuracy": 0.6797,
+        "real_accept_rate": 0.6628,
+        "sim_accept_rate": 0.6607
+      },
+      "Skeptic": {
+        "accuracy": 0.6014,
+        "real_accept_rate": 0.4914,
+        "sim_accept_rate": 0.4857
+      },
+      "Value Seeker": {
+        "accuracy": 0.6497,
+        "real_accept_rate": 0.6327,
+        "sim_accept_rate": 0.6146
+      }
+    },
+    "calibration_curve": [
+      {
+        "bin_mid": 0.15,
+        "predicted": 0.1865,
+        "actual": 0.1176,
+        "n": 17
+      },
+      {
+        "bin_mid": 0.25,
+        "predicted": 0.259,
+        "actual": 0.3006,
+        "n": 163
+      },
+      {
+        "bin_mid": 0.35,
+        "predicted": 0.3591,
+        "actual": 0.3557,
+        "n": 388
+      },
+      {
+        "bin_mid": 0.45,
+        "predicted": 0.4588,
+        "actual": 0.4848,
+        "n": 887
+      },
+      {
+        "bin_mid": 0.55,
+        "predicted": 0.5504,
+        "actual": 0.5321,
+        "n": 1496
+      },
+      {
+        "bin_mid": 0.65,
+        "predicted": 0.6497,
+        "actual": 0.6589,
+        "n": 1586
+      },
+      {
+        "bin_mid": 0.75,
+        "predicted": 0.7491,
+        "actual": 0.7545,
+        "n": 1438
+      },
+      {
+        "bin_mid": 0.85,
+        "predicted": 0.8432,
+        "actual": 0.8411,
+        "n": 1070
+      },
+      {
+        "bin_mid": 0.95,
+        "predicted": 0.9247,
+        "actual": 0.9419,
+        "n": 155
+      }
+    ],
+    "composite_fidelity_score": 75.0
+  },
+  "fidelity_improvement": 14.3,
+  "whatif_scenario": {
+    "discount": 0.2,
+    "is_incumbent_brand": 0,
+    "is_digital_channel": 1,
+    "is_new_product": 1,
+    "predicted_population_accept_rate": 0.6101
+  }
+}
