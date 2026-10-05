@@ -1,0 +1,182 @@
+{
+  "segmentation": {
+    "silhouette": 0.164,
+    "segments": {
+      "Low-Engagement": {
+        "cluster_id": 0,
+        "n_partners": 2377,
+        "avg_transactions_90d": 1.6,
+        "avg_tool_adoption": 0.439,
+        "avg_leads": 24.6,
+        "avg_response_hrs": 2.88,
+        "avg_ad_spend": 255.0,
+        "churn_rate": 0.344,
+        "recommended_play": "Re-engage: proactive success outreach; churn-save offers where risk is high."
+      },
+      "Developing": {
+        "cluster_id": 1,
+        "n_partners": 1050,
+        "avg_transactions_90d": 1.86,
+        "avg_tool_adoption": 0.344,
+        "avg_leads": 25.9,
+        "avg_response_hrs": 8.71,
+        "avg_ad_spend": 278.0,
+        "churn_rate": 0.668,
+        "recommended_play": "Educate: onboarding to Follow Up Boss / zPro, response-time coaching."
+      },
+      "Growers": {
+        "cluster_id": 2,
+        "n_partners": 944,
+        "avg_transactions_90d": 2.07,
+        "avg_tool_adoption": 0.659,
+        "avg_leads": 29.0,
+        "avg_response_hrs": 2.89,
+        "avg_ad_spend": 809.0,
+        "churn_rate": 0.137,
+        "recommended_play": "Accelerate: targeted tool-adoption nudges, lead-gen package upsell."
+      },
+      "Champions": {
+        "cluster_id": 3,
+        "n_partners": 1629,
+        "avg_transactions_90d": 4.1,
+        "avg_tool_adoption": 0.603,
+        "avg_leads": 33.5,
+        "avg_response_hrs": 2.91,
+        "avg_ad_spend": 310.0,
+        "churn_rate": 0.068,
+        "recommended_play": "Protect & upsell: premium advertising inventory, early-access betas."
+      }
+    }
+  },
+  "performance_model": {
+    "n_train": 4200,
+    "n_test": 1800,
+    "base_churn_rate": 0.293,
+    "auc_logistic": 0.895,
+    "auc_gbm": 0.884,
+    "top_drivers": [
+      "tool_adoption",
+      "response_time_hrs",
+      "transactions_90d",
+      "tenure_months",
+      "support_tickets"
+    ],
+    "true_drivers": [
+      "tool_adoption",
+      "transactions_90d",
+      "response_time_hrs",
+      "tenure_months",
+      "support_tickets"
+    ],
+    "driver_rank_agreement": 1.0,
+    "lift_at_5pct": 3.34,
+    "lift_at_20pct": 2.69,
+    "capture_at_20pct_targeted": 0.539,
+    "importances": {
+      "tool_adoption": 0.1583,
+      "response_time_hrs": 0.0511,
+      "transactions_90d": 0.0508,
+      "tenure_months": 0.0198,
+      "support_tickets": 0.0156,
+      "listings_active": 0.0034,
+      "ad_spend": 0.0032,
+      "tours_scheduled": 0.0022,
+      "leads_received": 0.0006,
+      "nps": -0.0002
+    }
+  },
+  "experiments": {
+    "ab_test": {
+      "srm": {
+        "n_control": 3043,
+        "n_treatment": 2957,
+        "chi2": 1.233,
+        "p_value": 0.2669,
+        "srm_flag": false
+      },
+      "raw_lift": 0.0397,
+      "raw_se": 0.00146,
+      "raw_p_value": 0.0,
+      "cuped_lift": 0.0401,
+      "cuped_se": 0.00046,
+      "cuped_p_value": 0.0,
+      "theta": 0.749,
+      "variance_reduction_pct": 79.7,
+      "se_reduction_pct": 68.1,
+      "true_lift": 0.04
+    },
+    "causal_psm": {
+      "naive_diff": 3.243,
+      "psm_att": 2.6,
+      "n_treated": 2787,
+      "n_control": 3213,
+      "covariate_balance": {
+        "tool_adoption": {
+          "smd_before": 1.218,
+          "smd_after": 0.009
+        },
+        "tenure_months": {
+          "smd_before": 0.385,
+          "smd_after": 0.043
+        },
+        "leads_received": {
+          "smd_before": 0.686,
+          "smd_after": 0.024
+        },
+        "listings_active": {
+          "smd_before": 0.765,
+          "smd_after": 0.018
+        }
+      },
+      "true_effect": 2.5,
+      "naive_bias": 0.743,
+      "psm_bias": 0.1,
+      "psm_beats_naive": true
+    }
+  },
+  "monitoring": {
+    "baseline_auc": 0.919,
+    "psi_alert_threshold": 0.25,
+    "auc_tolerance": 0.03,
+    "months": {
+      "month_1": {
+        "n_scored": 2500,
+        "mean_churn_score": 0.293,
+        "auc": 0.931,
+        "auc_drop_vs_baseline": -0.012,
+        "score_psi": 0.003,
+        "feature_psi": {
+          "leads_received": 0.005,
+          "response_time_hrs": 0.003,
+          "tool_adoption": 0.003,
+          "transactions_90d": 0.002,
+          "tenure_months": 0.003
+        },
+        "drifted_features": []
+      },
+      "month_2": {
+        "n_scored": 2500,
+        "mean_churn_score": 0.373,
+        "auc": 0.885,
+        "auc_drop_vs_baseline": 0.034,
+        "score_psi": 0.103,
+        "feature_psi": {
+          "leads_received": 5.568,
+          "response_time_hrs": 0.241,
+          "tool_adoption": 0.313,
+          "transactions_90d": 0.004,
+          "tenure_months": 0.005
+        },
+        "drifted_features": [
+          "leads_received",
+          "tool_adoption"
+        ]
+      }
+    },
+    "alerts": [
+      "month_2: feature drift (PSI>=0.25) on leads_received, tool_adoption",
+      "month_2: AUC decay 0.919 -> 0.885 (drop 0.034)"
+    ],
+    "healthy": false
+  }
+}

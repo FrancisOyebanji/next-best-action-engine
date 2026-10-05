@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>Partner Analytics</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6fb;color:#13203a;margin:0}
+ header{background:#0b2a6b;color:#fff;padding:16px 30px} h1{font-size:20px;margin:0}
+ .sub{color:#b9c8ea;font-size:13px}
+ main{max-width:1120px;margin:22px auto;padding:0 18px}
+ .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px}
+ .kpi{background:#fff;border:1px solid #e3e8f2;border-radius:12px;padding:16px}
+ .kpi .l{color:#5a6a86;font-size:13px}.kpi .v{font-size:22px;font-weight:700;margin-top:4px;color:#0b2a6b}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+ .panel{background:#fff;border:1px solid #e3e8f2;border-radius:12px;padding:18px;margin-bottom:18px}
+ .panel h2{font-size:15px;margin:0 0 12px} canvas{max-height:270px}
+ .reco{background:#eef3ff;border-left:4px solid #0b2a6b;padding:10px 14px;border-radius:6px;font-size:14px}
+ ul.alerts{margin:0;padding-left:18px;font-size:14px} ul.alerts li{margin:4px 0;color:#b42318}
+ table{width:100%;border-collapse:collapse;font-size:13px} th,td{text-align:left;padding:6px 8px;border-bottom:1px solid #eef1f7}
+ th{color:#5a6a86;font-weight:600}
+ @media(max-width:800px){.grid{grid-template-columns:1fr}}
+ footer{color:#5a6a86;font-size:12px;text-align:center;margin:24px 0}
+</style></head><body>
+<header><h1>Partner Analytics &mdash; portfolio segmentation, churn, experiments & monitoring</h1>
+<div class="sub">Segmentation (clustering) &middot; churn performance model &middot; A/B + causal inference &middot; production monitoring</div></header>
+<main>
+<div class="kpis">
+ <div class="kpi"><div class="l">Churn model AUC (GBM)</div><div class="v">0.884</div></div>
+ <div class="kpi"><div class="l">Churn captured @20% targeted</div><div class="v">54%</div></div>
+ <div class="kpi"><div class="l">A/B CUPED lift (SE &minus;68.1%)</div><div class="v">4.01 pp</div></div>
+ <div class="kpi"><div class="l">Causal ATT (FUB adoption)</div><div class="v">+2.6 tx</div></div>
+</div>
+<div class="grid">
+ <div class="panel"><h2>Partner segments &mdash; size & churn rate</h2><canvas id="c1"></canvas></div>
+ <div class="panel"><h2>Churn drivers &mdash; permutation importance</h2><canvas id="c2"></canvas></div>
+</div>
+<div class="grid">
+ <div class="panel"><h2>Model monitoring &mdash; AUC over monthly batches</h2><canvas id="c3"></canvas></div>
+ <div class="panel"><h2>Causal estimate vs ground truth</h2>
+   <table>
+     <tr><th>Estimator</th><th>Effect (transactions)</th><th>Bias vs truth</th></tr>
+     <tr><td>Naive (confounded)</td><td>3.243</td><td>+0.743</td></tr>
+     <tr><td>Propensity-score matching</td><td><b>2.6</b></td><td>+0.1</td></tr>
+     <tr><td>Known true effect</td><td>2.5</td><td>&mdash;</td></tr>
+   </table>
+   <p style="font-size:13px;color:#5a6a86;margin-top:10px">A/B raw lift 0.0397 &rarr; CUPED 0.0401
+   (variance &minus;79.7%); SRM p=0.2669.</p>
+ </div>
+</div>
+<div class="panel"><h2>Monitoring alerts (what an orchestrator would page on)</h2>
+ <ul class="alerts"><li>month_2: feature drift (PSI>=0.25) on leads_received, tool_adoption</li><li>month_2: AUC decay 0.919 -> 0.885 (drop 0.034)</li></ul></div>
+<div class="panel"><h2>Recommendation</h2><div class="reco">
+ Target the 54% of churn concentrated in the top-scored 20% of partners with retention plays;
+ roll out Follow Up Boss (causal +2.6 transactions, confounding-adjusted); ship the zPro variant
+ (+4.01pp conversion, confirmed under CUPED); and retrain after the month-2 drift alert.
+</div></div>
+</main>
+<footer>Synthetic partner RWD &middot; src/partner_analytics/build_dashboard.py &middot; causal & driver estimates graded vs known ground truth</footer>
+<script>
+const D={"seg_labels": ["Low-Engagement", "Developing", "Growers", "Champions"], "seg_counts": [2377, 1050, 944, 1629], "seg_churn": [34.4, 66.8, 13.7, 6.8], "imp_labels": ["tool_adoption", "response_time_hrs", "transactions_90d", "tenure_months", "support_tickets", "listings_active", "ad_spend", "tours_scheduled"], "imp_vals": [0.1583, 0.0511, 0.0508, 0.0198, 0.0156, 0.0034, 0.0032, 0.0022], "months": ["baseline", "month_1", "month_2"], "auc_series": [0.919, 0.931, 0.885], "psi_months": ["month_1", "month_2"], "psi_leads": [0.005, 5.568]};
+new Chart(c1,{data:{labels:D.seg_labels,datasets:[
+  {type:'bar',label:'partners',data:D.seg_counts,backgroundColor:'#0b2a6b',yAxisID:'y'},
+  {type:'line',label:'churn %',data:D.seg_churn,borderColor:'#e8a33d',backgroundColor:'#e8a33d',yAxisID:'y1',tension:.2}
+ ]},options:{scales:{y:{position:'left',title:{display:true,text:'partners'}},
+   y1:{position:'right',title:{display:true,text:'churn %'},grid:{drawOnChartArea:false}}}}});
+new Chart(c2,{type:'bar',data:{labels:D.imp_labels,datasets:[{data:D.imp_vals,backgroundColor:'#2749c9'}]},
+  options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+new Chart(c3,{type:'line',data:{labels:D.months,datasets:[{label:'AUC',data:D.auc_series,
+  borderColor:'#14804a',backgroundColor:'#14804a',tension:.2,pointRadius:4}]},
+  options:{scales:{y:{min:0.8,max:0.95}}}});
+</script></body></html>

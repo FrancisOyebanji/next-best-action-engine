@@ -1,8 +1,31 @@
-# Customer Behavior Intelligence — Digital Twins, Uplift Modeling & Decisioning
+# Customer & Partner Behavior Intelligence — Analytics, Experimentation, Digital Twins & Decisioning
 
-**An AI platform that models and simulates customer behavior end to end: AI-powered Digital Twins (synthetic personas that simulate customer decisions, validated against real outcomes with a fidelity framework), uplift models that find the "persuadables," a next-best-action decision engine, and an experimentation/measurement layer (Qini, A/B lift). Python + SQL.**
+**An end-to-end customer/partner data-science platform: portfolio segmentation (clustering), a churn/performance model with interpretable drivers, an experimentation + causal-inference layer (A/B with CUPED, propensity-score matching), production batch scoring with drift & performance monitoring — on top of AI-powered Digital Twins, uplift modeling, and a next-best-action decision engine. Python + SQL.**
 
-> **In one breath (Digital Twin / customer-simulation focus):** Built AI-powered Digital Twins — synthetic customer personas with behavioral-science traits and a latent decision process — that simulate customer preferences and decisions, then measured the alignment between simulated and real-world outcomes with a fidelity framework (accuracy, ROC-AUC, calibration, per-segment accept-rate match) and improved simulation fidelity +14 points through a calibration experiment. Paired with uplift modeling, an eligibility-constrained next-best-action engine, and a Qini/A-B measurement layer, it spans modeling, simulating, and acting on customer behavior.
+> **In one breath (Partner Analytics / data-science focus):** Built an end-to-end partner-analytics suite — KMeans segmentation of a B2B partner portfolio into actionable tiers, a gradient-boosted churn/performance model (0.88 AUC) that recovers its true drivers and captures 54% of churn in the top-targeted 20%, an experimentation layer that measures a product change with a randomized A/B test (CUPED cutting standard error ~68%) and a non-randomized feature rollout with propensity-score matching (recovering the true causal effect, 2.6 vs 2.5, after removing confounding bias), and a production monitoring layer that flags feature drift (PSI) and AUC decay on monthly scoring batches — paired with Digital Twins, uplift modeling, and a next-best-action engine.
+
+---
+
+## Partner Analytics — segmentation, performance, experiments & monitoring (headline for the Data Scientist role)
+
+The end-to-end work a Partner Analytics data scientist owns — problem framing → model development → validation → productionization — on a synthetic B2B real-estate-partner portfolio with **known ground truth** so every estimate is graded against the truth it should recover:
+
+```bash
+pip install -r requirements.txt
+PYTHONPATH=src python -m partner_analytics.run_partner       # segmentation + churn model + experiments + monitoring
+PYTHONPATH=src python -m partner_analytics.build_dashboard   # partner analytics dashboard
+PYTHONPATH=src python -m pytest tests/test_partner_analytics.py -q   # 6 tests incl. causal recovery & drift alerts
+```
+
+| Capability | Method | Result / insight |
+|---|---|---|
+| **Segmentation** ([segmentation.py](src/partner_analytics/segmentation.py)) | KMeans + value/engagement tiers | Champions / Growers / Developing / Low-Engagement, each with a recommended play |
+| **Performance model** ([performance_model.py](src/partner_analytics/performance_model.py)) | GBM + logistic baseline, permutation importance | churn **AUC 0.88**, captures **54% of churn in the top 20%**, recovers all true drivers (rank agreement 1.0) |
+| **A/B experiment** ([experiments.py](src/partner_analytics/experiments.py)) | CUPED variance reduction + SRM guard | lift 0.040 (= true), **~68% lower standard error** vs raw, SRM clean |
+| **Causal inference** (observational) | 1-NN propensity-score matching | naive 3.24 → **PSM ATT 2.6 vs true 2.5**; covariate balance SMD 1.22 → 0.01 |
+| **Production monitoring** ([monitoring.py](src/partner_analytics/monitoring.py)) | batch scoring + PSI + AUC decay | correctly flags month-2 **feature drift** and **AUC decay 0.919 → 0.885** |
+
+The two centerpieces are **causal inference** and **monitoring**. Because the synthetic data has a *known* causal effect and injected drift, the propensity-score-matching estimate is **graded against ground truth** (it removes the confounding bias the naive comparison suffers), and the drift monitor is shown catching a real covariate shift and the performance decay it causes. That maps directly to the JD's "customer segmentation models (clustering, regression, tree-based)," "experiments and observational studies (A/B testing, causal inference)," and "monitoring model performance over time."
 
 ---
 
