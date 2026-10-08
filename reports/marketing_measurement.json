@@ -1,0 +1,183 @@
+{
+  "incrementality": {
+    "true_lift_pct": 0.12,
+    "did_lift_pct": 0.1334,
+    "synthetic_control_lift_pct": 0.0873,
+    "did_abs_error": 0.0134,
+    "synthetic_control_abs_error": 0.0327,
+    "incremental_revenue": 416007.0,
+    "incremental_spend": 198000.0,
+    "iroas": 2.1
+  },
+  "mmm": {
+    "r_squared": 0.8874,
+    "adstock_rates": {
+      "tiktok": 0.5,
+      "meta": 0.4,
+      "google_ppc": 0.0,
+      "email": 0.0,
+      "branded_search": 0.8
+    },
+    "contribution_share": {
+      "tiktok": 0.243,
+      "meta": 0.465,
+      "google_ppc": 0.116,
+      "email": 0.046,
+      "branded_search": 0.129
+    },
+    "roi_index": {
+      "tiktok": 0.6917,
+      "meta": 0.9271,
+      "google_ppc": 0.3206,
+      "email": 0.1538,
+      "branded_search": 0.3555
+    },
+    "recovered_contribution_ranking": [
+      "meta",
+      "tiktok",
+      "branded_search",
+      "google_ppc",
+      "email"
+    ],
+    "true_contribution_ranking": [
+      "meta",
+      "tiktok",
+      "google_ppc",
+      "email",
+      "branded_search"
+    ],
+    "rank_agreement": 0.7,
+    "top_channel_correct": true
+  },
+  "attribution": {
+    "true_incremental_share": {
+      "tiktok": 0.32,
+      "meta": 0.26,
+      "google_ppc": 0.2,
+      "email": 0.13,
+      "branded_search": 0.09
+    },
+    "model_shares": {
+      "last_touch": {
+        "tiktok": 0.095,
+        "meta": 0.111,
+        "google_ppc": 0.226,
+        "email": 0.282,
+        "branded_search": 0.287
+      },
+      "first_touch": {
+        "tiktok": 0.534,
+        "meta": 0.329,
+        "google_ppc": 0.096,
+        "email": 0.023,
+        "branded_search": 0.017
+      },
+      "linear": {
+        "tiktok": 0.292,
+        "meta": 0.249,
+        "google_ppc": 0.215,
+        "email": 0.131,
+        "branded_search": 0.113
+      },
+      "time_decay": {
+        "tiktok": 0.234,
+        "meta": 0.215,
+        "google_ppc": 0.231,
+        "email": 0.169,
+        "branded_search": 0.151
+      },
+      "position": {
+        "tiktok": 0.306,
+        "meta": 0.231,
+        "google_ppc": 0.182,
+        "email": 0.145,
+        "branded_search": 0.138
+      }
+    },
+    "mae_vs_truth": {
+      "last_touch": 0.1496,
+      "first_touch": 0.1133,
+      "linear": 0.0155,
+      "time_decay": 0.0523,
+      "position": 0.0249
+    },
+    "best_model": "linear",
+    "last_touch_worst": true,
+    "most_over_credited_by_last_touch": "branded_search",
+    "last_touch_over_credit": 0.197
+  },
+  "reconciliation": {
+    "table": [
+      {
+        "channel": "tiktok",
+        "last_touch_share": 0.095,
+        "mmm_share": 0.243,
+        "gap": -0.148,
+        "verdict": "last-touch UNDER-credits (upper-funnel); worth more than last-click shows"
+      },
+      {
+        "channel": "meta",
+        "last_touch_share": 0.111,
+        "mmm_share": 0.465,
+        "gap": -0.354,
+        "verdict": "last-touch UNDER-credits (upper-funnel); worth more than last-click shows"
+      },
+      {
+        "channel": "google_ppc",
+        "last_touch_share": 0.226,
+        "mmm_share": 0.116,
+        "gap": 0.11,
+        "verdict": "last-touch OVER-credits (likely a closer); MMM/incrementality say less"
+      },
+      {
+        "channel": "email",
+        "last_touch_share": 0.282,
+        "mmm_share": 0.046,
+        "gap": 0.236,
+        "verdict": "last-touch OVER-credits (likely a closer); MMM/incrementality say less"
+      },
+      {
+        "channel": "branded_search",
+        "last_touch_share": 0.287,
+        "mmm_share": 0.129,
+        "gap": 0.158,
+        "verdict": "last-touch OVER-credits (likely a closer); MMM/incrementality say less"
+      }
+    ],
+    "divergence_flags": [
+      {
+        "channel": "tiktok",
+        "direction": "under",
+        "gap": -0.148
+      },
+      {
+        "channel": "meta",
+        "direction": "under",
+        "gap": -0.354
+      },
+      {
+        "channel": "google_ppc",
+        "direction": "over",
+        "gap": 0.11
+      },
+      {
+        "channel": "email",
+        "direction": "over",
+        "gap": 0.236
+      },
+      {
+        "channel": "branded_search",
+        "direction": "over",
+        "gap": 0.158
+      }
+    ],
+    "recommendations": [
+      "meta is likely undervalued by last-click (35pp below MMM); consider protecting or increasing budget and confirm with an incrementality test.",
+      "Re-examine spend on email: last-touch over-credits it by 24pp vs MMM. Validate with a geo holdout before scaling.",
+      "Re-examine spend on branded_search: last-touch over-credits it by 16pp vs MMM. Validate with a geo holdout before scaling.",
+      "tiktok is likely undervalued by last-click (15pp below MMM); consider protecting or increasing budget and confirm with an incrementality test.",
+      "Re-examine spend on google_ppc: last-touch over-credits it by 11pp vs MMM. Validate with a geo holdout before scaling."
+    ],
+    "n_divergences": 5
+  }
+}

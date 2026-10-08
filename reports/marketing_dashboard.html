@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>Marketing Measurement</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f5f6fa;color:#191c33;margin:0}
+ header{background:#1b1f4b;color:#fff;padding:16px 30px} h1{font-size:20px;margin:0}
+ .sub{color:#c3c7ea;font-size:13px}
+ main{max-width:1120px;margin:22px auto;padding:0 18px}
+ .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin-bottom:20px}
+ .kpi{background:#fff;border:1px solid #e4e6f0;border-radius:12px;padding:16px}
+ .kpi .l{color:#5f6388;font-size:13px}.kpi .v{font-size:22px;font-weight:700;margin-top:4px;color:#1b1f4b}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+ .panel{background:#fff;border:1px solid #e4e6f0;border-radius:12px;padding:18px;margin-bottom:18px}
+ .panel h2{font-size:15px;margin:0 0 12px} canvas{max-height:290px}
+ table{width:100%;border-collapse:collapse;font-size:13px} th,td{padding:7px 9px;border-bottom:1px solid #eef0f6;text-align:center}
+ th{color:#5f6388}
+ .note{background:#eceef9;border-left:4px solid #1b1f4b;padding:10px 14px;border-radius:6px;font-size:14px}
+ ul{margin:8px 0;padding-left:18px;font-size:14px} ul li{margin:5px 0}
+ @media(max-width:800px){.grid{grid-template-columns:1fr}}
+ footer{color:#5f6388;font-size:12px;text-align:center;margin:24px 0}
+</style></head><body>
+<header><h1>Marketing Measurement &mdash; incrementality, MMM & attribution</h1>
+<div class="sub">Geo incrementality &middot; MMM+ (adstock + saturation) &middot; multi-touch attribution &middot; reconciliation</div></header>
+<main>
+<div class="kpis"><div class='kpi'><div class='l'>Incrementality lift (true)</div><div class='v'>12%</div></div><div class='kpi'><div class='l'>Measured lift (DiD)</div><div class='v'>13.3%</div></div><div class='kpi'><div class='l'>iROAS</div><div class='v'>2.1x</div></div><div class='kpi'><div class='l'>MMM R²</div><div class='v'>0.89</div></div><div class='kpi'><div class='l'>MMM rank agreement</div><div class='v'>0.70</div></div><div class='kpi'><div class='l'>Best MTA model</div><div class='v'>linear</div></div></div>
+<div class="grid">
+ <div class="panel"><h2>Attribution vs truth &mdash; credit share by channel</h2><canvas id="c1"></canvas>
+   <p style="font-size:13px;color:#5f6388;margin-top:10px">Last-touch over-credits
+   <b>branded_search</b> (a closer) by +20pp
+   vs its true incremental share &mdash; the case for incrementality over last-click.</p></div>
+ <div class="panel"><h2>Incrementality &mdash; measured vs true lift</h2><canvas id="c2"></canvas>
+   <p style="font-size:13px;color:#5f6388;margin-top:10px">Geo holdout: DiD 13.3% and synthetic
+   control 8.7% vs true 12%; iROAS 2.1x.</p></div>
+</div>
+<div class="panel"><h2>Reconciliation &mdash; last-touch vs MMM by channel</h2>
+ <table><tr><th>channel</th><th>last-touch share</th><th>MMM share</th><th>gap</th><th style="text-align:left">verdict</th></tr><tr><td>tiktok</td><td>0.095</td><td>0.243</td><td>-0.148</td><td style='text-align:left'>last-touch UNDER-credits (upper-funnel); worth more than last-click shows</td></tr><tr><td>meta</td><td>0.111</td><td>0.465</td><td>-0.354</td><td style='text-align:left'>last-touch UNDER-credits (upper-funnel); worth more than last-click shows</td></tr><tr><td>google_ppc</td><td>0.226</td><td>0.116</td><td>+0.11</td><td style='text-align:left'>last-touch OVER-credits (likely a closer); MMM/incrementality say less</td></tr><tr><td>email</td><td>0.282</td><td>0.046</td><td>+0.236</td><td style='text-align:left'>last-touch OVER-credits (likely a closer); MMM/incrementality say less</td></tr><tr><td>branded_search</td><td>0.287</td><td>0.129</td><td>+0.158</td><td style='text-align:left'>last-touch OVER-credits (likely a closer); MMM/incrementality say less</td></tr></table>
+ <h3 style="font-size:14px;margin:14px 0 4px">Recommendations</h3><ul><li>meta is likely undervalued by last-click (35pp below MMM); consider protecting or increasing budget and confirm with an incrementality test.</li><li>Re-examine spend on email: last-touch over-credits it by 24pp vs MMM. Validate with a geo holdout before scaling.</li><li>Re-examine spend on branded_search: last-touch over-credits it by 16pp vs MMM. Validate with a geo holdout before scaling.</li><li>tiktok is likely undervalued by last-click (15pp below MMM); consider protecting or increasing budget and confirm with an incrementality test.</li><li>Re-examine spend on google_ppc: last-touch over-credits it by 11pp vs MMM. Validate with a geo holdout before scaling.</li></ul></div>
+<div class="panel"><h2>Why it maps to the role</h2><div class="note">
+ Northbeam's three measurement lenses &mdash; multi-touch attribution, MMM+, and incrementality &mdash; built end to end,
+ triangulated into a customer-facing diagnostic, with every estimate graded against known ground truth.
+</div></div>
+</main>
+<footer>Synthetic data &middot; src/marketing_measurement/build_dashboard.py &middot; estimates graded vs known truth</footer>
+<script>
+new Chart(c1,{type:'bar',data:{labels:["tiktok", "meta", "google_ppc", "email", "branded_search"],datasets:[
+  {label:'true incremental',data:[0.32, 0.26, 0.2, 0.13, 0.09],backgroundColor:'#14804a'},
+  {label:'last-touch',data:[0.095, 0.111, 0.226, 0.282, 0.287],backgroundColor:'#b42318'},
+  {label:'MMM',data:[0.243, 0.465, 0.116, 0.046, 0.129],backgroundColor:'#2749c9'}
+ ]},options:{scales:{y:{min:0}}}});
+new Chart(c2,{type:'bar',data:{labels:['True','DiD','Synthetic control'],
+  datasets:[{data:[0.12,0.1334,0.0873],
+  backgroundColor:['#14804a','#1b1f4b','#7a8cc9']}]},
+  options:{plugins:{legend:{display:false}},scales:{y:{min:0}}}});
+</script></body></html>

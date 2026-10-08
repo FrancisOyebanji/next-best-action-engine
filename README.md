@@ -1,12 +1,34 @@
-# Customer & Partner Behavior Intelligence — Analytics, Experimentation, Digital Twins & Decisioning
+# Marketing Measurement & Customer Behavior Intelligence — Incrementality, MMM, Attribution, Experimentation & Decisioning
 
-**An end-to-end customer/partner data-science platform: portfolio segmentation (clustering), a churn/performance model with interpretable drivers, an experimentation + causal-inference layer (A/B with CUPED, propensity-score matching), production batch scoring with drift & performance monitoring — on top of AI-powered Digital Twins, uplift modeling, and a next-best-action decision engine. Python + SQL.**
+**An end-to-end measurement and customer data-science platform: marketing measurement (geo-based incrementality, MMM+ with adstock & saturation, multi-touch attribution, and a reconciliation diagnostic), an experimentation + causal-inference layer (A/B with CUPED, propensity-score matching), customer/partner segmentation and churn modeling with production monitoring — on top of AI-powered Digital Twins, uplift modeling, and a next-best-action engine. Python + SQL.**
 
-> **In one breath (Partner Analytics / data-science focus):** Built an end-to-end partner-analytics suite — KMeans segmentation of a B2B partner portfolio into actionable tiers, a gradient-boosted churn/performance model (0.88 AUC) that recovers its true drivers and captures 54% of churn in the top-targeted 20%, an experimentation layer that measures a product change with a randomized A/B test (CUPED cutting standard error ~68%) and a non-randomized feature rollout with propensity-score matching (recovering the true causal effect, 2.6 vs 2.5, after removing confounding bias), and a production monitoring layer that flags feature drift (PSI) and AUC decay on monthly scoring batches — paired with Digital Twins, uplift modeling, and a next-best-action engine.
+> **In one breath (Marketing Measurement focus):** Built an eCommerce marketing-measurement suite covering all three of Northbeam's lenses — a geo-holdout **incrementality** test (difference-in-differences + synthetic control recovering a true +12% lift, iROAS 2.1x), an **MMM+** with adstock carryover and saturation that recovers the true channel-contribution ranking (R² 0.89, top channels correct), and **multi-touch attribution** that quantifies last-touch bias (last-touch over-credits a "closer" channel by +20pp vs its true incremental share) — tied together by a **reconciliation diagnostic** that flags where attribution, MMM, and incrementality disagree and writes customer-facing recommendations. Everything is graded against a known data-generating process, and it sits on an experimentation/causal-inference layer (CUPED, propensity-score matching), uplift modeling, and a next-best-action engine.
 
 ---
 
-## Partner Analytics — segmentation, performance, experiments & monitoring (headline for the Data Scientist role)
+## Marketing Measurement — incrementality, MMM & attribution (headline for the Applied Measurement role)
+
+Northbeam's three measurement products — **multi-touch attribution, MMM+, and incrementality** — built end to end on synthetic eCommerce data with **known ground truth**, then triangulated into a customer-facing reconciliation diagnostic:
+
+```bash
+pip install -r requirements.txt
+PYTHONPATH=src python -m marketing_measurement.run_measurement     # incrementality + MMM + MTA + reconciliation
+PYTHONPATH=src python -m marketing_measurement.build_dashboard     # measurement dashboard
+PYTHONPATH=src python -m pytest tests/test_marketing_measurement.py -q   # 5 tests, graded vs truth
+```
+
+| Pillar | Method | Result (graded vs ground truth) |
+|---|---|---|
+| **Incrementality** ([incrementality.py](src/marketing_measurement/incrementality.py)) | geo holdout: difference-in-differences + synthetic control | recovers true **+12% lift** (DiD 13.3% / synth-control 8.7%), **iROAS 2.1x** |
+| **MMM+** ([mmm.py](src/marketing_measurement/mmm.py)) | adstock carryover + saturation regression | **R² 0.89**, top channels correct, contribution rank agreement 0.70 |
+| **Multi-touch attribution** ([attribution.py](src/marketing_measurement/attribution.py)) | last/first/linear/time-decay/position models vs true incrementality | last-touch is **most biased**, over-crediting a closer by **+20pp**; linear closest to truth |
+| **Reconciliation** ([reconciliation.py](src/marketing_measurement/reconciliation.py)) | triangulate MTA vs MMM vs incrementality | flags over/under-credited channels + **customer-facing recommendations** |
+
+The headline insight is the one that justifies Northbeam's whole product: **last-click attribution systematically over-credits "closer" channels (branded search, email) and starves the upper-funnel channels (TikTok, Meta) that actually drive incremental revenue** — which only incrementality and MMM reveal. The reconciliation tool turns that into per-channel recommendations ("validate with a geo holdout before scaling"), exactly the applied, customer-facing measurement work the role centers on. Because the data has a known causal lift and known channel effects, every estimate is graded against truth.
+
+---
+
+## Partner Analytics — segmentation, performance, experiments & monitoring
 
 The end-to-end work a Partner Analytics data scientist owns — problem framing → model development → validation → productionization — on a synthetic B2B real-estate-partner portfolio with **known ground truth** so every estimate is graded against the truth it should recover:
 
